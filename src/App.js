@@ -121,7 +121,7 @@ const App = () => {
 
     const payload = {
       contents: [{ parts: [{ text: userQuery }] }],
-      tools: [{ "google_search": {} }],
+      // Tools removed to bypass the 403 error
       systemInstruction: { parts: [{ text: systemPrompt }] },
       generationConfig: { responseMimeType: "application/json", temperature: 0.1 }
     };
