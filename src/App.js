@@ -116,7 +116,7 @@ const App = () => {
       "hasMultipleBatteryComponents": boolean, "containsBatteryOrCell": boolean, "primarySource": "string"
     }`;
 
-    const apiKey = ""; 
+    const apiKey = "AIzaSyB25eiHetZS18V6F4hajRZ2dmvltr9k-L0"; 
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
 
     const payload = {
