@@ -119,13 +119,15 @@ const App = () => {
     const apiKey = "AIzaSyB25eiHetZS18V6F4hajRZ2dmvltr9k-L0"; 
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
-    const payload = {
-      contents: [{ parts: [{ text: userQuery }] }],
-      // Tools removed to bypass the 403 error
-      systemInstruction: { parts: [{ text: systemPrompt }] },
-      generationConfig: { responseMimeType: "application/json", temperature: 0.1 }
-    };
+const userQuery = `Product: ${productName}. Generate a JSON catalog with Title, Brand, Category, Specs, and 3-step A+ Content. Use professional corporate language.`;
 
+const payload = {
+  contents: [{ parts: [{ text: userQuery }] }],
+  generationConfig: { 
+    responseMimeType: "application/json", 
+    temperature: 0.7 
+  }
+};
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
